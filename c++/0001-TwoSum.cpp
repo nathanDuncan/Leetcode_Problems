@@ -20,12 +20,16 @@ using namespace std;
 class HashTable {
     private:
         //Each bucket is a list of pairs (key, value)
+        // The table [vector] has a bunch of buckets [lists] which hold the key and value [in a pair data type]
+        // A really good hash function with 1-1 output wouldn't need the buckets
+        // Key - refers to a integer in nums
+        // Value - corresponds to that integer's index in nums
         vector<list<pair<int, int>>> table;
         int table_size;
 
         // Hash function to calculate the index
         int hashFunction(int key) {
-            return abs(key) % table_size;
+            return abs(key) % table_size; // Pretty simple function
         }
 
     public:
@@ -62,7 +66,7 @@ class HashTable {
                 }
             }
 
-            // Key does not exist
+            // Key (the complement) does not exist
             return false;
         }
 };
