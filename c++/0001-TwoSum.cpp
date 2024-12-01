@@ -19,7 +19,7 @@ using namespace std;
 // Custom hash table class
 class HashTable {
     private:
-        //Each bucket is a list of pairs (key, value)
+        // Each bucket is a list of pairs (key, value)
         // The table [vector] has a bunch of buckets [lists] which hold the key and value [in a pair data type]
         // A really good hash function with 1-1 output wouldn't need the buckets
         // Key - refers to a integer in nums
