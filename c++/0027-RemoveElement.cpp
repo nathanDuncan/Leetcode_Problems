@@ -22,6 +22,7 @@ using namespace std;
 // Solution Class
 class Solution {
     public:
+        /// My Solution //////////////////////////////////////////////////////////////////////
         int removeElements(vector<int>& nums, int val) {
             /*
             Solution::removeElement function solves the described problem.
@@ -55,7 +56,7 @@ class Solution {
             }
 
             ////////////////////////////// Printing ////////////////////////////////
-            cout << "Sorted array: [";
+            cout << "Sorted array.2: [";
             for (int i = 0; i < nums.size(); ++i) {
                 cout << nums[i] << " ";
             }
@@ -64,12 +65,26 @@ class Solution {
             // Return an empty vector if no solution was found
             return k; 
         }
+
+        /// Popular Solution /////////////////////////////////////////////////////////////////
+        int removeElementsBEST(vector<int>& nums, int val) {
+            // Solution by Rahul Varma
+            // O(n) but may not consider all edge cases
+            int index = 0;
+            for (int i =0; i < nums.size(); i++){
+                if (nums[i] != val) {
+                    nums[index] = nums[i];
+                    index++;
+                }
+            }
+            return index;
+        }
 };
 
 ///// Main Function /////////////////////////////////////////////////////
 int main() {
     ///// Input values /////
-    vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};   // Input array
+    vector<int> nums = {2, 2, 3};   // Input array
     int val = 2;                         // Value to remove
 
     // Create an instance of the Solution class
